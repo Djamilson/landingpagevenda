@@ -1,0 +1,4 @@
+GN_ENV=producao | homologacao
+GN_CLIENT_ID = Client_Id_0063f6f9f455ef438f4ecc19d90e8ecf9a8a718b
+GN_CLIENTE_SECRET = Client_Secret_f8e6f47065f3d0bfcbd1660933ff3645a6a0cf83
+GN_CERTIFICADO=developer289308.p12

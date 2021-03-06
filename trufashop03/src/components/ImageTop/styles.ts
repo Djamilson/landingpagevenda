@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import theme from '../../styles/theme'
 
 export const Container = styled.header`
   top: 0;
@@ -56,7 +57,7 @@ export const Container = styled.header`
   }
 
   div {
-    border: 1px solid #f00;
+    border: 0;
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
@@ -86,8 +87,7 @@ export const ContainerImage = styled.article<IPropsImage>`
   margin-bottom: 1rem;
   max-height: 71vh;
 
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 0.1rem 0.3rem,
-    rgba(0, 0, 0, 0.05) 0px 0.1rem 0.2rem, rgba(0, 0, 0, 0.05) 0px 0.5rem 1.5rem;
+  border-left: 1px solid ${theme.colors.colorLineInWhite};
   border: 0;
   border-radius: 6px;
   img {

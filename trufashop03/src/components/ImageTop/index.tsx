@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 
 import { Container, ContainerImage, ButtonImage } from './styles'
 import Image from 'next/image'
+import IProduct from '../../types/product'
 
 interface IImage {
   id: string
@@ -13,11 +14,18 @@ interface IImages {
   images: IImage[]
 }
 
-const ImageTop: React.FC<IImages> = ({ images }) => {
+interface IProps {
+  product: IProduct
+}
+
+const ImageTop: React.FC<IProps> = ({ product }) => {
+
+//const ImageTop: React.FC<IImages> = ({ images }) => {
+
   const [imageSelected, setImageSelected] = useState<IImage>({} as IImage)
 
   useEffect(() => {
-    setImageSelected(images[0])
+    setImageSelected(product.data.images[0])
   }, [])
 
   const upDataImageSelected = useCallback(
@@ -31,9 +39,8 @@ const ImageTop: React.FC<IImages> = ({ images }) => {
     <Container>
       <header>
         <article>
-          <h1>WOMEN'S RUNNING SHOE </h1>
-          <strong>NIKE EPIC REACT FLYKNIT</strong>
-          <span>$150</span>
+          <h1>{product.data.name}</h1>
+          <strong>{product.data.name}</strong>
         </article>
       </header>
       <div>
@@ -41,7 +48,7 @@ const ImageTop: React.FC<IImages> = ({ images }) => {
           <img src={imageSelected.url320x240} alt={imageSelected.url320x240} />
         </ContainerImage>
         <section>
-          {images.map((image, index) => {
+          {product.data.images.map((image, index) => {
             return (
               <ButtonImage
                 key={index}

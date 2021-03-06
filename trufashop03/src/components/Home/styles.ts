@@ -4,9 +4,9 @@ export const Container = styled.div`
   display: flex;
   justify-content: flex-start;
   width: 100vw;
-  height: 600vh;
+  height: 900vh;
   padding: 0 5rem;
-  border: 0;
+  border: 1px solid #ff0;
   flex-direction: column;
   align-items: center;
   top: 0;
@@ -17,22 +17,21 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   justify-content: flex-start;
-  height: 100%;
-  max-height: 992px;
+  height: auto;
   padding: 2.5rem 8rem;
   border: 0;
   flex-direction: column;
   align-items: center;
   top: 0;
 
-  margin: 0 12rem;
+  margin: 0 0rem;
 `
 
 export const ContainerImage = styled.section`
   top: 0;
   margin-top: 10rem;
   width: 100%;
-  height: 94vh;
+  //height: 94vh;
   border: 0;
 
   display: grid;

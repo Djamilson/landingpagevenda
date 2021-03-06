@@ -3,6 +3,8 @@ import { useWindowScroll } from 'react-use';
 
 import { Container, DivScroll } from './styles';
 
+
+
 const ScrollIndicator: React.FC = () => {
   const { y } = useWindowScroll();
   const [scrolled, setScrolled] = useState(0);

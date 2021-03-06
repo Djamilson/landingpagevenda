@@ -5,18 +5,21 @@ import CompletedChallenges from '../CompletedChallenges'
 import CountDown from '../CountDown'
 import DescritionPromotion from '../DescritionProduct'
 import ImageTop from '../ImageTop'
-
+import Descrition from '../Descrition'
 interface IProps {
   product: IProduct
 }
 
-import { Container } from './styles'
+import { Container, Content } from './styles'
 
 const ItemProduct: React.FC<IProps> = ({ product }) => {
   return (
     <Container key={product.id}>
-      <ImageTop images={product.data.images} />
-      <DescritionPromotion />
+      <Content>
+        <ImageTop product={product} />
+        <DescritionPromotion product={product} />
+      </Content>
+      <Descrition product={product} />
     </Container>
   )
 }

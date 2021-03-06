@@ -48,7 +48,8 @@ const theme = {
     text_title: '#2e384d',
     red_: '#e83f5b',
     green_: '#4cd62b',
-    blue: '#5965e0',
+    blue: '#586fe5',
+
     blue_dark: '#4953b8',
     blue_twitter: '#2aa9e0'
   }

@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    es6: true,
+    es2021: true,
     node: true,
     jest: true,
   },
@@ -22,6 +22,11 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'prettier', 'eslint-plugin-import-helpers'],
   rules: {
+
+
+
+
+    'no-restricted-syntax': 'off',
     'no-empty-function': 'off',
     '@typescript-eslint/no-empty-function': ['error'],
     'no-unused-expressions': 'off',

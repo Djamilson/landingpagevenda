@@ -5,7 +5,7 @@ import CreateCompraTrufaShopService from './CreateCompraTrufaShopService';
 import CreateTokenTrufaShopService from './CreateTokenTrufaShopService';
 import GetBarCodeTrufaShopService from './GetBarCodeTrufaShopService';
 
-export default class BrandsController {
+export default class TrufaShopController {
   public async create(req: Request, res: Response): Promise<Response> {
     try {
       const createTokenTrufaShop = container.resolve(

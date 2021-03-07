@@ -15,7 +15,6 @@ interface ProductProps {
 }
 
 const Home: React.FC<ProductProps> = ({ products }) => {
-
   return (
     <Container>
       <Head>
@@ -32,6 +31,15 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const products = await client.query(
     Prismic.Predicates.at('document.type', 'product')
   )
+
+  const product = await client.query(
+    Prismic.Predicates.at('document.id', 'YEFrrRIAACUAbsxB'),
+    {
+      lang: '*'
+    }
+  )
+
+  console.log('my product', product.results[0])
 
   const data = products.results.map(item => {
     const images = item.data.images.map(image => {

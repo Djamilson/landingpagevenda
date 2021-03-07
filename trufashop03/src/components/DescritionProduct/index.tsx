@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { FaCartPlus } from 'react-icons/fa'
 import { FiCheck } from 'react-icons/fi'
+import { MdAddShoppingCart } from 'react-icons/md'
+import IProduct from '../../types/product'
+import { ProductStock, useCartProduct } from '../../hooks/cartProduct'
 
 import {
   Container,
@@ -17,6 +20,29 @@ interface IProps {
 }
 
 const DescritionProduct: React.FC<IProps> = ({ product }) => {
+  const { addToCart, cart } = useCartProduct()
+
+  const amount = useMemo(
+    () =>
+      cart.reduce((sumAmount: any, item: ProductStock) => {
+
+        console.log('item:', item);
+        
+        //sumAmount[item.itemProduct.product.id] = item.itemProduct.stock
+
+        return sumAmount
+      }, {}),
+    [cart]
+  )
+
+  const addItem = useCallback(
+    async (idProduct: string) => {
+      console.log('idProduct', idProduct)
+      await addToCart(idProduct)
+    },
+    [addToCart]
+  )
+
   return (
     <Container>
       <header>
@@ -84,12 +110,14 @@ const DescritionProduct: React.FC<IProps> = ({ product }) => {
       </ItemCor>
 
       <ComponentButton>
-        <Button type="button">
-          <span>
-            <FaCartPlus />
-          </span>
-          <strong>Adicionar ao carrinho</strong>
-        </Button>
+        <button type="button" onClick={() => addItem(product.id)}>
+          <div>
+            <MdAddShoppingCart size={16} color="#fff" />
+
+            {amount[product.id] || 0}
+          </div>
+          <span>ADICIONAR AO CARRINHO</span>
+        </button>
       </ComponentButton>
     </Container>
   )

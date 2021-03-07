@@ -156,6 +156,42 @@ export const ComponentButton = styled.div`
   align-items: center;
   width: 100%;
   margin-top: 2rem;
+
+  button {
+    width: 15rem;
+    background: ${theme.colors.blue};
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: auto;
+
+    display: flex;
+    align-items: center;
+    transition: background 0.02s;
+
+    &:hover {
+      background: ${shade(0.2, '#7159c1')};
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.1);
+
+      svg {
+        margin-right: 5px;
+      }
+    }
+
+    span {
+      font-size: 11px;
+      flex: 1;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
 `
 export const Button = styled(MyButton)`
   background: ${theme.colors.blue};

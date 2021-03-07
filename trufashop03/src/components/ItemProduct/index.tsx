@@ -1,8 +1,6 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import IProduct from '../../types/product'
-import ChallengeBox from '../ChallengeBox'
-import CompletedChallenges from '../CompletedChallenges'
-import CountDown from '../CountDown'
+
 import DescritionPromotion from '../DescritionProduct'
 import ImageTop from '../ImageTop'
 import Descrition from '../Descrition'

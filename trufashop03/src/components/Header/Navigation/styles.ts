@@ -1,4 +1,6 @@
+import { shade } from 'polished'
 import styled from 'styled-components'
+import theme from '../../../styles/theme'
 
 export const Navigation = styled.ul`
   border: 0;
@@ -24,41 +26,53 @@ interface Props {
   selected?: boolean
 }
 export const ButtonLI = styled.li`
-  color: ${props => props.theme.colors.colorTextcomplement01};
-  display: flex;
-  justify-content: center;
-  border: none;
   background: none;
   list-style-type: none;
-  max-width: 220px;
-  transition: transform 0.3s ease-in-out;
-  height: 2.25rem;
-  line-height: 2.25rem;
-
-  border: 2px solid ${props => props.theme.colors.colorPrimary};
-  padding: 1rem;
-  border-radius: 6px;
-  margin-top: 0rem;
-  align-items: center;
 
   a {
     text-decoration: none;
+    height: 2.25rem;
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+    background: ${theme.colors.blue};
+    align-items: center;
+
+    color: #fff;
     border: 0;
+
+    width: 10rem;
+
+    margin-top: auto;
+    transition: background 0.02s;
   }
 
-  strong {
-    display: block;
-    color: #fff;
-    font-size: 18px;
-    font-weight: normal;
-    text-align: center;
+  div {
+    display: flex;
+    align-items: center;
+    padding: 10px 8px;
+    background: rgba(0, 0, 0, 0.1);
+
+    svg {
+      margin-right: 5px;
+    }
   }
+
+  span {
+    font-size: 12px;
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+  }
+
   &:hover,
   &.active {
+    background: ${shade(0.2, `${theme.colors.blue}`)};
     font-weight: bold;
-    opacity: 0.6;
+    opacity: 0.8;
     transform: translateY(-5px);
     transition: all 0.2s;
+    border-radius: 6px;
 
     &:after {
       opacity: 1;

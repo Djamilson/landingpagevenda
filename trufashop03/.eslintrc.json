@@ -17,9 +17,7 @@
     "plugin:prettier/recommended",
     "prettier",
 
-
     "eslint:recommended"
-
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -37,13 +35,12 @@
     "react-hooks",
     "import-helpers",
     "eslint-plugin-import-helpers"
-
   ],
   "rules": {
     "prettier/prettier": "error",
     "space-before-function-paren": "off",
     "react/prop-types": "off",
-     "import-helpers/order-imports": [
+    "import-helpers/order-imports": [
       "warn",
       {
         "newlinesBetween": "always",

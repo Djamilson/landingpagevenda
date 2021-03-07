@@ -1,10 +1,11 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react'
+import { MdAddShoppingCart } from 'react-icons/md'
 
-import IMenu from '../../../types/menu';
+import IMenu from '../../../types/menu'
 import { Navigation, MenuLI, ButtonLI } from './styles'
 
 interface IProps {
-  menus: IMenu[];
+  menus: IMenu[]
 }
 
 const MeNavigation: React.FC<IProps> = ({ menus }) => {
@@ -22,11 +23,15 @@ const MeNavigation: React.FC<IProps> = ({ menus }) => {
       </MenuLI>
       <ButtonLI>
         <a href="#" aria-label="Contatos">
-          Meu Carrinho
+          <div>
+            <MdAddShoppingCart size={16} color="#fff" />
+            10
+          </div>
+          <span>Meu carrinho</span>
         </a>
       </ButtonLI>
     </Navigation>
   )
-};
+}
 
-export default MeNavigation;
+export default MeNavigation
